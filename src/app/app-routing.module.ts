@@ -8,16 +8,15 @@ import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes: Routes = [
   {
-  path: '', component: MainLayoutComponent, children: [
-    {path: '', redirectTo: '/', pathMatch: 'full'},
-    {path: '', component: HomePageComponent},
-    {path: 'section/:id', component: SectionPageComponent},
+    path: '', component: MainLayoutComponent, children: [
+      {path: '', redirectTo: '/', pathMatch: 'full'},
+      {path: '', component: HomePageComponent},
+      {path: 'section/:id', component: SectionPageComponent},
     // {path: '**', component: NotFoundComponent}
   ]
 },
-  {
-  path: 'admin', loadChildren: './admin/admin.module#AdminModule'
-  }, {path: '**', component: NotFoundComponent}
+  {path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
+  {path: '**', component: NotFoundComponent}
   ];
 
 @NgModule({

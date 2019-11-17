@@ -7,6 +7,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SectionPageComponent } from './section-page/section-page.component';
 import { MainLayoutComponent } from './public/components/main-layout/main-layout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SectionComponent } from './public/components/section/section.component';
+import {MaterialModule} from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomePageComponent,
     SectionPageComponent,
     MainLayoutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
