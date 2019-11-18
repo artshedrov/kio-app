@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateSectionComponent } from './create-section/create-section.component';
 import { EditSectionComponent } from './edit-section/edit-section.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -19,6 +20,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       {
         path: '', component: AdminLayoutComponent, children: [
