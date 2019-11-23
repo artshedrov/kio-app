@@ -12,7 +12,6 @@ const routes: Routes = [
       {path: '', redirectTo: '/', pathMatch: 'full'},
       {path: '', component: HomePageComponent},
       {path: 'section/:id', component: SectionPageComponent},
-    // {path: '**', component: NotFoundComponent}
   ]
 },
   {path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
