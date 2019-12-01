@@ -34,6 +34,6 @@
   </div>
   <button
     type="submit"
-    [disabled]="form.invalid"
+    [disabled]="form.invalid || submitted"
   >Войти</button>
 </form>
