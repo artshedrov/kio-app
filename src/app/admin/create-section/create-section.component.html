@@ -1,1 +1,23 @@
-<p>create-section works!</p>
+<form [formGroup]="form" (ngSubmit)="submitCreatedSection()">
+  <h2>Создание секции</h2>
+  <div
+    [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+  >
+    <label for="title">Название секции:</label>
+    <input id="title" type="text" formControlName="title">
+    <div
+      *ngIf="form.get('title').touched && form.get('title').invalid"
+    >
+      <small
+        *ngIf="form.get('title').errors.required"
+      >Введите название секции</small>
+    </div>
+  </div>
+
+  <div>
+    <label>Контент поста</label>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Создать секцию</button>
+
+</form>

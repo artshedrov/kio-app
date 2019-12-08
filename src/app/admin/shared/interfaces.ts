@@ -9,3 +9,9 @@ export interface FbAuthResponse {
   expiresIn: string;
 }
 
+export interface Section {
+  id?: string;
+  title: string;
+  text: string;
+}
+
