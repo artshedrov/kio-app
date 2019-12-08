@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule} from '@angular/router';
+import {CanActivate, RouterModule} from '@angular/router';
 import {AdminLayoutComponent} from './shared/components/admin-layout/admin-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateSectionComponent } from './create-section/create-section.component';
@@ -9,6 +9,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthService} from './shared/service/auth.service';
 import {SharedModule} from './shared/shared.module';
+import {AuthGuard} from './shared/service/auth.guard';
 
 
 
@@ -30,9 +31,9 @@ import {SharedModule} from './shared/shared.module';
         path: '', component: AdminLayoutComponent, children: [
           {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
           {path: 'login', component: LoginPageComponent},
-          {path: 'dashboard', component: DashboardComponent},
-          {path: 'create', component: CreateSectionComponent},
-          {path: 'section/:id/edit', component: EditSectionComponent}
+          {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+          {path: 'create', component: CreateSectionComponent, canActivate: [AuthGuard]},
+          {path: 'section/:id/edit', component: EditSectionComponent, canActivate: [AuthGuard]}
         ]
       }
       ])
@@ -41,7 +42,8 @@ import {SharedModule} from './shared/shared.module';
     RouterModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuard
   ]
 })
 export class AdminModule { }
