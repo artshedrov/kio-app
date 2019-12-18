@@ -26,6 +26,7 @@ export class CreateSectionComponent implements OnInit {
       title: this.form.value.title,
       text: this.form.value.text
     };
+    console.log(section);
   }
 
 }

@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="submitCreatedSection()">
   <h2>Создание секции</h2>
   <div
-    [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+    [ngClass]="{invalid: form.get('text').touched && form.get('text').invalid}"
   >
     <label for="title">Название секции:</label>
     <input id="title" type="text" formControlName="title">
@@ -15,7 +15,8 @@
   </div>
 
   <div>
-    <label>Контент поста</label>
+    <label>Контент секции</label>
+    <quill-editor formControlName="text"></quill-editor>
   </div>
 
   <button type="submit" [disabled]="form.invalid">Создать секцию</button>
