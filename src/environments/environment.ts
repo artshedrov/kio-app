@@ -6,7 +6,8 @@ import {Environment} from './interface';
 
 export const environment: Environment = {
   production: false,
-  apiKey: 'AIzaSyBwHoqhxM7sUW2Kl-ludugTKsDOhYRSkDA'
+  apiKey: 'AIzaSyBwHoqhxM7sUW2Kl-ludugTKsDOhYRSkDA',
+  fireBaseUrl: 'https://kio-app-d36b2.firebaseio.com/'
 };
 
 /*

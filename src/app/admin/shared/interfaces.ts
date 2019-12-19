@@ -15,3 +15,7 @@ export interface Section {
   text: string;
 }
 
+export interface FireBaseCreateResponse {
+  name: string;
+}
+
