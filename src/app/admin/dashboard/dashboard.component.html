@@ -1,1 +1,25 @@
-<p>dashboard works!</p>
+<div *ngIf="sections.length; else loadingSectionsList">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Название</th>
+        <th>Действие</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let section of sections; let idx = index">
+      <td>{{ idx + 1 }}</td>
+      <td>{{ section.title }}</td>
+      <td>
+        <button [routerLink]="['/admin', 'section', section.id, 'edit']">Открыть</button>
+        <a (click)="removeSection(section.id)">Удалить</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #loadingSectionsList>
+  <p>Идет загрузка списка...</p>
+</ng-template>

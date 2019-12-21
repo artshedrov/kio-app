@@ -18,6 +18,18 @@ export class SectionsService {
         };
       }));
   }
+  getAllSections(): Observable<Section[]> {
+    return this.http.get(`${environment.fireBaseUrl}/sections.json`)
+      .pipe(
+        map((response: {[key: string]: any}) => {
+          return Object
+            .keys(response)
+            .map( key => ({
+              ...response[key],
+              id: key
+          }));
+    }));
+  }
 }
 
 

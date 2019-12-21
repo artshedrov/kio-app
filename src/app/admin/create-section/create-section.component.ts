@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import validate = WebAssembly.validate;
 import {Section} from '../shared/interfaces';
 import {SectionsService} from '../shared/sections.service';
 

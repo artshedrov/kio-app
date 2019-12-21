@@ -7,7 +7,6 @@ import { CreateSectionComponent } from './create-section/create-section.componen
 import { EditSectionComponent } from './edit-section/edit-section.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AuthService} from './shared/service/auth.service';
 import {SharedModule} from './shared/shared.module';
 import {AuthGuard} from './shared/service/auth.guard';
 
@@ -42,7 +41,6 @@ import {AuthGuard} from './shared/service/auth.guard';
     RouterModule
   ],
   providers: [
-    AuthService,
     AuthGuard
   ]
 })
