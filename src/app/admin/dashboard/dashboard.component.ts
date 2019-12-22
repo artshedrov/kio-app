@@ -11,19 +11,27 @@ import {Subscription} from 'rxjs';
 export class DashboardComponent implements OnInit, OnDestroy {
 
   sections: Section[] = [];
-  sectionSubscription: Subscription;
+  addSectionSubscription: Subscription;
+  deleteSectionSubcription: Subscription;
   constructor(private sectionsService: SectionsService) { }
 
   ngOnInit() {
-    this.sectionSubscription = this.sectionsService.getAllSections().subscribe(sections => {
+    this.addSectionSubscription = this.sectionsService.getAllSections().subscribe(sections => {
       this.sections = sections;
     });
   }
-  removeSection(id: string) {}
+  removeSection(id: string) {
+    this.deleteSectionSubcription = this.sectionsService.removeSectionFromFireBase(id).subscribe(() => {
+      this.sections = this.sections.filter(section => section.id !== id);
+    })
+  }
 
   ngOnDestroy() {
-    if (this.sectionSubscription) {
-      this.sectionSubscription.unsubscribe();
+    if (this.addSectionSubscription) {
+      this.addSectionSubscription.unsubscribe();
+    }
+    if (this.deleteSectionSubcription) {
+      this.deleteSectionSubcription.unsubscribe();
     }
   }
 }

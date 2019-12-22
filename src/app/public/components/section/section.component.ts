@@ -8,7 +8,7 @@ import {Section} from '../../../admin/shared/interfaces';
 })
 export class SectionComponent implements OnInit {
   @Input() section: Section;
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

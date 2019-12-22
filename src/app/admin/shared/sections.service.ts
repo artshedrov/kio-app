@@ -30,6 +30,9 @@ export class SectionsService {
           }));
     }));
   }
+  removeSectionFromFireBase(id: string): Observable<void> {
+    return this.http.delete<void>(`${environment.fireBaseUrl}/sections/${id}.json`);
+  }
 }
 
 
