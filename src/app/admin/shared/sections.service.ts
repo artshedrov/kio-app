@@ -30,6 +30,15 @@ export class SectionsService {
           }));
     }));
   }
+  getSectionById(id: string): Observable<Section> {
+    return this.http.get<Section>(`${environment.fireBaseUrl}/sections/${id}.json`)
+      .pipe(map((section: Section) => {
+      return {
+        ...section,
+        id,
+      };
+    }));
+  }
   removeSectionFromFireBase(id: string): Observable<void> {
     return this.http.delete<void>(`${environment.fireBaseUrl}/sections/${id}.json`);
   }

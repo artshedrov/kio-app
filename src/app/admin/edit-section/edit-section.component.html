@@ -1,1 +1,25 @@
-<p>edit-section works!</p>
+<div *ngIf="form; else loading">
+  <form [formGroup]="form" (ngSubmit)="submitEditedSection()">
+    <div
+      [ngClass]="{invalid: form.get('text').touched && form.get('text').invalid}"
+    >
+      <label for="title">Название секции:</label>
+      <input id="title" type="text" formControlName="title">
+      <div
+        *ngIf="form.get('title').touched && form.get('title').invalid"
+      >
+        <small
+          *ngIf="form.get('title').errors.required"
+        >Введите название секции</small>
+      </div>
+    </div>
+    <div>
+      <quill-editor formControlName="text"></quill-editor>
+    </div>
+    <button type="submit" [disabled]="form.invalid">Обновить</button>
+  </form>
+</div>
+
+<ng-template #loading>
+  <p>Идет загрузка</p>
+</ng-template>
