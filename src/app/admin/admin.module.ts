@@ -9,6 +9,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from './shared/shared.module';
 import {AuthGuard} from './shared/service/auth.guard';
+import {AlertComponent} from './shared/components/alert/alert.component';
+import {AlertSevice} from './shared/service/alert.service';
 
 
 
@@ -18,7 +20,8 @@ import {AuthGuard} from './shared/service/auth.guard';
     LoginPageComponent,
     DashboardComponent,
     CreateSectionComponent,
-    EditSectionComponent
+    EditSectionComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +44,8 @@ import {AuthGuard} from './shared/service/auth.guard';
     RouterModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    AlertSevice
   ]
 })
 export class AdminModule { }

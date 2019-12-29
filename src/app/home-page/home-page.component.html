@@ -1,8 +1,13 @@
-<div class="container">
-  <app-section></app-section>
-  <app-section></app-section>
-  <app-section></app-section>
-  <app-section></app-section>
-  <app-section></app-section>
-  <app-section></app-section>
+<div class="container"
+  *ngIf="sections$ | async as sections; else loadingSections"
+>
+  <app-section
+    *ngFor="let section of sections"
+    [section]="section"
+  >
+  </app-section>
 </div>
+
+<ng-template #loadingSections>
+  <p>Загрузка секций</p>
+</ng-template>

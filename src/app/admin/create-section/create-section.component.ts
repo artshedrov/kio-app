@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Section} from '../shared/interfaces';
 import {SectionsService} from '../shared/sections.service';
+import {AlertSevice} from '../shared/service/alert.service';
 
 @Component({
   selector: 'app-create-section',
@@ -10,7 +11,10 @@ import {SectionsService} from '../shared/sections.service';
 })
 export class CreateSectionComponent implements OnInit {
   form: FormGroup;
-  constructor(private sectionsService: SectionsService) { }
+  constructor(
+    private sectionsService: SectionsService,
+    private alert: AlertSevice
+  ) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -29,8 +33,8 @@ export class CreateSectionComponent implements OnInit {
 
     this.sectionsService.createSection(section).subscribe(() => {
       this.form.reset();
+      this.alert.saySuccess('Секция была успешно создана');
     });
-    console.log(section);
+    // console.log(section);
   }
-
 }

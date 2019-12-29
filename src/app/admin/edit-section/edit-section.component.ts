@@ -5,6 +5,7 @@ import {switchMap} from 'rxjs/operators';
 import {Section} from '../shared/interfaces';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Subscription} from 'rxjs';
+import {AlertSevice} from '../shared/service/alert.service';
 
 @Component({
   selector: 'app-edit-section',
@@ -19,7 +20,8 @@ export class EditSectionComponent implements OnInit, OnDestroy {
 
   constructor(
     private currentRoute: ActivatedRoute,
-    private sectionsService: SectionsService
+    private sectionsService: SectionsService,
+    private alert: AlertSevice
   ) {}
 
   ngOnInit() {
@@ -52,5 +54,6 @@ export class EditSectionComponent implements OnInit, OnDestroy {
     }).subscribe(() => {
       this.submittedFlag = false;
     });
+    this.alert.saySuccess('Секция была обновлена');
   }
 }
