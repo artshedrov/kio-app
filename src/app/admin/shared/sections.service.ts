@@ -42,6 +42,9 @@ export class SectionsService {
   removeSectionFromFireBase(id: string): Observable<void> {
     return this.http.delete<void>(`${environment.fireBaseUrl}/sections/${id}.json`);
   }
+  updateSection(section: Section): Observable<Section> {
+    return this.http.patch<Section>(`${environment.fireBaseUrl}/sections/${section.id}.json`, section);
+  }
 }
 
 
