@@ -1,11 +1,15 @@
-<div>
-  <div>
-    <h2>Удары руками</h2>
-    <button routerLink="/">На главную</button>
-  </div>
-  <div>
-    <p>The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.</p>
+<div *ngIf="section$ | async as section; else loadingSection">
+  <div class="post">
+    <div class="header">
+      <h2>{{ section.title }}</h2>
+      <button class="btn btn-link" routerLink="/">На главную</button>
+    </div>
+    <div>
+      <quill-view-html [content]="section.text"></quill-view-html>
+    </div>
   </div>
 </div>
+
+<ng-template #loadingSection>
+  <p>Загрузка контента...</p>
+</ng-template>
