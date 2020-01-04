@@ -12,6 +12,17 @@
           *ngIf="form.get('title').errors.required"
         >Введите название секции</small>
       </div>
+      <div>
+        <label>Превью:</label>
+        <input type="text" formControlName="previewImg">
+        <!--    <div-->
+        <!--      *ngIf="form.get('previewImg').touched && form.get('previewImg').invalid"-->
+        <!--    >-->
+        <!--      <small-->
+        <!--        *ngIf="form.get('previewImg').errors.required"-->
+        <!--      >Введите ссылку на прекью</small>-->
+        <!--    </div>-->
+      </div>
     </div>
     <div>
       <quill-editor formControlName="text"></quill-editor>

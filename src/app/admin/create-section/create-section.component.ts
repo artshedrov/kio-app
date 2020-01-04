@@ -19,7 +19,8 @@ export class CreateSectionComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       title: new FormControl(null, Validators.required),
-      text: new FormControl(null, Validators.required)
+      text: new FormControl(null, Validators.required),
+      previewImg: new FormControl(null, Validators.required)
     });
   }
   submitCreatedSection() {
@@ -28,13 +29,13 @@ export class CreateSectionComponent implements OnInit {
     }
     const section: Section = {
       title: this.form.value.title,
-      text: this.form.value.text
+      text: this.form.value.text,
+      previewImg: this.form.value.previewImg
     };
 
     this.sectionsService.createSection(section).subscribe(() => {
       this.form.reset();
       this.alert.saySuccess('Секция была успешно создана');
     });
-    // console.log(section);
   }
 }

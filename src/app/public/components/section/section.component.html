@@ -3,7 +3,7 @@
     <mat-card-header>
       <mat-card-title>{{ section.title }}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image class="img" src="" alt="">
+    <img mat-card-image class="img" src="{{ section.previewImg }}" alt="">
     <mat-card-actions>
       <button mat-button class="btn" [routerLink]="['/section', section.id]">Открыть</button>
     </mat-card-actions>

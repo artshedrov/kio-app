@@ -32,7 +32,8 @@ export class EditSectionComponent implements OnInit, OnDestroy {
         this.section = section;
         this.form = new FormGroup({
           title: new FormControl(section.title, Validators.required),
-          text: new FormControl(section.text, Validators.required)
+          text: new FormControl(section.text, Validators.required),
+          previewImg: new FormControl(section.previewImg, Validators.required)
         });
     });
   }
@@ -50,7 +51,8 @@ export class EditSectionComponent implements OnInit, OnDestroy {
     this.unSubscription = this.sectionsService.updateSection({
       ...this.section,
       title: this.form.value.title,
-      text: this.form.value.text
+      text: this.form.value.text,
+      previewImg: this.form.value.previewImg
     }).subscribe(() => {
       this.submittedFlag = false;
     });

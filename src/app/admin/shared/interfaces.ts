@@ -13,6 +13,7 @@ export interface Section {
   id?: string;
   title: string;
   text: string;
+  previewImg: string;
 }
 
 export interface FireBaseCreateResponse {
