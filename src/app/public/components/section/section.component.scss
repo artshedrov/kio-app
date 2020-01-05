@@ -1,10 +1,11 @@
 .example-card {
-  background: linear-gradient(180deg, #FFFFFF -10%, rgba(255, 255, 255, 0) 150%), #EF5350;
-  max-width: 344px;
+  background: linear-gradient(180deg, #FFFFFF -10%, rgba(255, 255, 255, 0) 150%), #FFC3C1;
+  max-width: 400px;
   margin: 10px;
 }
 
 .img {
   border-radius: 15px;
+  background-size: cover;
   //opacity: 0.6;
 }
