@@ -14,6 +14,7 @@ export interface Section {
   title: string;
   text: string;
   previewImg: string;
+  previewText: string;
 }
 
 export interface FireBaseCreateResponse {

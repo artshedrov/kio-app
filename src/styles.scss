@@ -4,6 +4,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -14,11 +15,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$kio-app-primary: mat-palette($mat-indigo);
+$kio-app-primary: mat-palette($mat-pink);
 $kio-app-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$kio-app-warn: mat-palette($mat-red);
+$kio-app-warn: mat-palette($mat-pink);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $kio-app-theme: mat-light-theme($kio-app-primary, $kio-app-accent, $kio-app-warn);
@@ -44,7 +45,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .btn {
   display: inline-block;
   background: var(--light-color);
-  color: #333;
+  color: #333333;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;

@@ -20,7 +20,8 @@ export class CreateSectionComponent implements OnInit {
     this.form = new FormGroup({
       title: new FormControl(null, Validators.required),
       text: new FormControl(null, Validators.required),
-      previewImg: new FormControl(null, Validators.required)
+      previewImg: new FormControl(null, Validators.required),
+      previewText: new FormControl(null, Validators.required)
     });
   }
   submitCreatedSection() {
@@ -30,7 +31,8 @@ export class CreateSectionComponent implements OnInit {
     const section: Section = {
       title: this.form.value.title,
       text: this.form.value.text,
-      previewImg: this.form.value.previewImg
+      previewImg: this.form.value.previewImg,
+      previewText: this.form.value.previewText
     };
 
     this.sectionsService.createSection(section).subscribe(() => {

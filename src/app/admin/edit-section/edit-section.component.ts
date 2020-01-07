@@ -33,7 +33,8 @@ export class EditSectionComponent implements OnInit, OnDestroy {
         this.form = new FormGroup({
           title: new FormControl(section.title, Validators.required),
           text: new FormControl(section.text, Validators.required),
-          previewImg: new FormControl(section.previewImg, Validators.required)
+          previewImg: new FormControl(section.previewImg, Validators.required),
+          previewText: new FormControl(section.previewText, Validators.required)
         });
     });
   }
@@ -52,7 +53,8 @@ export class EditSectionComponent implements OnInit, OnDestroy {
       ...this.section,
       title: this.form.value.title,
       text: this.form.value.text,
-      previewImg: this.form.value.previewImg
+      previewImg: this.form.value.previewImg,
+      previewText: this.form.value.previewText
     }).subscribe(() => {
       this.submittedFlag = false;
     });
